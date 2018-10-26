@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <title>Update Profile</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="http://localhost:8004/Pharmacy/assets/admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+        <link href="http://localhost:8004/Pharmacy/assets/admin/css/font-awesome.min.css" rel="stylesheet">
+        <!-- Menu CSS -->
+
+        <link href="http://localhost:8004/Pharmacy/assets/admin/css/style.css" rel="stylesheet">
+        <!-- color CSS -->
+        <link href="http://localhost:8004/Pharmacy/assets/admin/css/default.css" rel="stylesheet">
+
+        <!-- Bootstrap core CSS -->
+        <link href="http://localhost:8004/Pharmacy/assets/validation/dist/parsley.css" rel="stylesheet">
+        <link href="http://localhost:8004/Pharmacy/assets/admin/css/jquery.dataTables.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- jQuery --> 
+        <script src="http://localhost:8004/Pharmacy/assets/admin/js/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript --> 
+        <script src="http://localhost:8004/Pharmacy/assets/admin/js/bootstrap.min.js"></script> 
+
+        <script src="http://localhost:8004/Pharmacy/assets/admin/js/jquery.dataTables.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+
+<!--<link rel="shortcut icon" href="<?//= base_url('assets/images/favicon.ico')?>" type="image/x-icon" />-->
+        <script>
+            $(function () {
+                $("#datetimepicker1").datepicker().datepicker("setDate", new Date());
+                ;
+            });
+        </script>
+    </head>
+
+    <body class="fix-header">
+        <!-- ============================================================== --> 
+
+        <!-- Wrapper --> 
+        <!-- ============================================================== -->
+        <div id="wrapper"> 
+            <!-- ============================================================== --> 
+            <!-- Topbar header - style you can find in pages.scss --> 
+            <!-- ============================================================== -->
+            <nav class="navbar navbar-default navbar-static-top m-b-0">
+                <div class="navbar-header">
+                    <div class="sidebar-head">
+                        <a href="#">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <!-- Logo --> 
+                    <div class="top-left-part">         
+                        <a class="logo" href="dashboard">                        
+                            <h1>Pharmacy</h1>
+                        </a> 
+                    </div>
+                    <!-- /Logo -->
+
+                    <ul class="nav navbar-top-links navbar-right pull-right">
+                        <li>
+                                                       
+                        </li>
+                        <li> 
+                             
+                            <a class="profile-pic" href="http://localhost:8004/Pharmacy/dashboard"> <img src="http://localhost:8004/Pharmacy/assets/images/users/resize/noimagefound_137x76.jpg" alt="user-img"  class="img-circle"><b class="hidden-xs">patient1 patient1</b></a>
+
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-header --> 
+                <!-- /.navbar-top-links --> 
+                <!-- /.navbar-static-side --> 
+            </nav>
+            <!-- End Top Navigation --> 
+            <!-- ============================================================== --> 
+            <!-- Left Sidebar - style you can find in sidebar.scss  --> 
+            <!-- ============================================================== -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav slimscrollsidebar">
+
+                    <ul class="nav" id="side-menu">    
+
+                        <li><a href="http://localhost:8004/Pharmacy/dashboard" class=" "><i class="fa fa-home" aria-hidden="true"></i> Home </a> </li>
+                                                    <li>
+                                <a href="javascript:void(0);" class=" "><span><i class="fa fa-medkit" aria-hidden="true"></i></span> My Medication</a>
+                                <ul class="submenu"   style="display: " >
+                                    <li><a href="http://localhost:8004/Pharmacy/mymedication" class=" "> All Medication</a></li>                                    
+                                    <li><a href="http://localhost:8004/Pharmacy/medicationfordelivery" class=" "> Medication for Delivery</a></li>
+                                    <li><a href="http://localhost:8004/Pharmacy/medicationforcollect" class=" ">Medication for Collect</a></li>                                   
+                                </ul>
+                            </li>                           
+                                                <li>
+                            <a href="http://localhost:8004/Pharmacy/updateprofile" class="active "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update Profile </a> </li>                      
+                        <li class="logout"><a href="http://localhost:8004/Pharmacy/logout"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Logout</a></li>                 
+                    </ul>
+                </div>
+            </div>
+            <!-- ============================================================== --> 
+            <!-- End Left Sidebar --> 
+            <!-- ============================================================== --> 
+            <!-- ============================================================== --> 
+            <!-- Page Content --> 
+            <!-- ============================================================== -->
+
+            <div id="page-wrapper">
+
+<div class="container-fluid">
+    <div class="row bg-title">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h4 class="page-title">Edit Profile</h4>
+        </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+
+        </div>
+        <!-- /.col-lg-12 --> 
+    </div>
+    <!-- /row -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+
+                <!--form box start-->
+                <div class="form-box">
+
+                    <font color="red"> 
+                                        </font>
+
+                    
+
+                    
+
+                    <form class="form-horizontal add-users-form" role="form" id="sign_in" method="POST" enctype="multipart/form-data" data-parsley-validate>
+
+                        <div class="form-group">
+                            <label for="inputAvtar" class="col-sm-3 control-label"> Profile Picture  <br>(Note: Picture should be larger than 130 x 170px)</label>
+                            <div class="col-sm-6 extra_sm_6">
+                                <div class="row">
+                                    <div class="col-xs-6 pd_02">
+                                                                                <img src="http://localhost:8004/Pharmacy/assets/images/users/resize/noimagefound_172x130.jpg" id="imgDisplayarea" style="width: 170px;"/>
+                                        <div class="upload-btn-wrapper">
+
+
+                                            <div class="new_btn_upload">
+
+                                                <a class=' green_btn button' href='javascript:;'> Profile Picture
+                                                    <input type="file" name="avatar" id="imgShow" data-parsley-filemaxmegabytes="2" data-parsley-trigger="change" data-parsley-filemimetypes="image/jpeg, image/png , image/gif" onchange="imagePreview(this)" title="Profile picture" />
+                                                </a>                           
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputMembertype" class="col-sm-3 control-label"> Gender/Category <sup style="color: #9ddb25;">*</sup></label>
+                            <div class="col-sm-6 extra_sm_6">
+                                <div class="row">
+                                    <div class="col-xs-6 pd_02">
+                                        <ul class="form_checkbox">
+                                            <li>
+                                                <div class="form-group bd_01">
+                                                    <input id="checkbox1" name="gender" value="0"  checked type="radio">
+                                                    <label for="checkbox1">Male <span></span></label></div>
+                                            </li>
+                                            <li><div class="form-group bd_01">
+                                                    <input id="checkbox2" name="gender" value="1"   type="radio">
+                                                    <label for="checkbox2">Female <span></span></label>  </div>            
+                                            </li>
+                                        </ul>
+                                    </div>                                  
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputFirstname" class="col-sm-3 control-label">Name <sup style="color: #9ddb25;">*</sup></label>
+                            <div class="col-sm-6 extra_sm_6">
+                                <div class="row">
+                                    <div class="col-xs-6 pd_02">
+                                        <input class="form-control" id=inputFirstname""  value="patient1" name="firstname" data-parsley-length="[1, 20]" maxlength="20"  type="text" placeholder="First Name" required />
+                                    </div>
+                                    <div class="col-xs-6 pd_02">
+                                        <input class="form-control" id="inputLastname" type="text" value="patient1" name="lastname"  data-parsley-length="[1, 20]" maxlength="20"  placeholder="Last Name" required/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nhs_number" class="col-sm-3 control-label"> NHS Number <sup style="color: #9ddb25;">*</sup></label>
+                            <div class="col-sm-6 pd_02 extra_sm_6">
+                                <input class="form-control" id="nhs_number" type="text" required="true" name="nhs_number" value="2343423432"  placeholder="NHS Number" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label"> New & confirm Password <sup style="color: #9ddb25;">*</sup></label>
+                            <div class="col-sm-6 extra_sm_6">
+                                <div class="row">
+                                    <div class="col-xs-6 pd_02">
+                                        <input class="form-control" id="inputPassword3" type="password" name="password" data-parsley-equalto="#inputPassword31" data-parsley-length="[4, 30]" maxlength="30" placeholder="New Password" required />
+                                    </div>
+                                    <div class="col-xs-6 pd_02">
+                                        <input class="form-control" id="inputPassword31" type="password" name="cpassword" placeholder="Confirm Password" data-parsley-length="[4, 30]" maxlength="30" required />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail32" class="col-sm-3 control-label"> New & confirm Email Address <sup style="color: #9ddb25;">*</sup></label>
+                            <div class="col-sm-6 extra_sm_6">
+                                <div class="row">
+                                    <div class="col-xs-6 pd_02">
+                                        <input class="form-control" id="inputEmail3" type="email"  value="patient1@mailinator.com" data-parsley-length="[6, 50]" maxlength="50" data-parsley-equalto="#inputEmail32" name="email"  placeholder="Email address" required />
+                                    </div>
+                                    <div class="col-xs-6 pd_02">
+                                        <input class="form-control" id="inputEmail32" type="text"  value="patient1@mailinator.com" name="cemail" data-parsley-length="[6, 50]"  maxlength="50" placeholder="Confirm Email address" required />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                  
+
+
+                        <div class="form-group">
+                            <label for="inputStreet" class="col-sm-3 control-label"> Street/Number <sup style="color: #9ddb25;">*</sup></label>
+                            <div class="col-sm-6 extra_sm_6">
+                                <div class="row">
+                                    <div class="col-xs-9 pd_02">
+                                        <input class="form-control" id="inputStreet" placeholder="  "  value="test_updated" data-parsley-length="[2, 50]" maxlength="50" name="rood"  type="text" required/>
+                                    </div>
+                                    <div class="col-xs-3 pd_02">
+                                        <input class="form-control " id="inputStreetNum" placeholder="30" value="12" data-parsley-type="digits" data-parsley-length="[1, 4]" maxlength="4" name="number" type="text" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputPostalcode" class="col-sm-3 control-label">Postal code/City <sup style="color: #9ddb25;">*</sup></label>
+                            <div class="col-sm-6 extra_sm_6">
+                                <div class="row">
+                                    <div class="col-xs-4 pd_02">
+                                        <input class="form-control" id="inputPostalcode"  data-parsley-pattern="^([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z])))) [0-9][A-Za-z]{2})$"  value="LS28 5FB" name="zip"   type="text" required>
+                                    </div>
+                                    <div class="col-xs-8 pd_02">
+                                        <input class="form-control " id="inputCity" value="Leeds" name="place"  placeholder="Oldenburg" data-parsley-length="[2, 100]"  maxlength="100" type="text" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputTelephone" class="col-sm-3 control-label">Telephone/Fax <sup style="color: #9ddb25;">*</sup></label>
+                            <div class="col-sm-6 extra_sm_6">
+                                <div class="row">
+                                    <div class="col-xs-6 pd_02">
+                                        <input class="form-control" id="inputTelephone" value="12345678" data-parsley-type="digits" data-parsley-length="[8, 15]" maxlength="15" name="phone" placeholder="04361 - 62 63 86 " type="text" required>
+                                    </div>
+                                    <div class="col-xs-6 pd_02">
+                                        <input class="form-control " id="inputFax" value="1234567896" data-parsley-type="digits" name="fax" data-parsley-length="[2, 20]" maxlength="20" placeholder="" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                   
+
+
+
+                        <div class="form-group">
+                            <label for="inputSubmitbtn" class="col-sm-3 control-label"> </label>
+                            <div class="col-sm-6 extra_sm_6">
+                                <div class="row">
+                                    <div class="col-xs-12 pd_02">
+                                        <button type="button" class="button btn btn-warning" onClick="window.location.reload();"> Cancel </button>
+                                        <button type="submit" class="button btn btn-success"> Save </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <!--form box end-->
+
+
+            </div>
+
+        </div>
+    </div>
+    <!-- /.row --> 
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("form").parsley();
+
+        $.listen('parsley:form:success', function (ParsleyForm) {
+
+
+            ParsleyForm.$element.find('button').prop('disabled', false);
+            ParsleyForm.$element.find('button').removeClass("grey_btn").addClass("green_btn");
+            $('.search_submit_btn').removeClass("green_btn");
+
+        });
+
+        $.listen('parsley:form:error', function (ParsleyForm) {
+
+            ParsleyForm.$element.find('button').prop('disabled', true);
+            ParsleyForm.$element.find('button').removeClass("green_btn").addClass("grey_btn");
+            $('.search_submit_btn').removeClass("green_btn");
+
+
+        });
+
+        $("form :input").change(function () {
+
+            $(this).closest('form').parsley().validate();
+        });
+
+    });
+
+
+</script>
+<div class="modal fade" id="modal-container-569626" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"  data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog third_popup">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <div class="circle_img"><img src="http://localhost:8004/Pharmacy/assets/images/circltik.png" alt=""/></div>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> <img src="http://localhost:8004/Pharmacy/assets/images/cross.png" alt=""/> </button>
+                <h4 class="modal-title" id="myModalLabel">You have successfully saved your change! </h4>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="searchModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header managed-repeat">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Advance Search</h4>
+      </div>
+      <div class="modal-body">      
+              <form  method="post" class="form-horizontal" role="form" action="http://localhost:8004/Pharmacy/getsearchuser">
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label" for="username">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Name"/>
+                    </div>
+                  </div>
+                  <div class="form-group">                  
+                    <div class="col-sm-offset-5 col-sm-7">
+                        <input type="radio" name="usr_addr_condition" value="and" checked="checked" /> AND
+                        <input type="radio" name="usr_addr_condition" value="or"  /> OR
+                    </div>
+                  </div>  
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="address" >Address</label>
+                    <div class="col-sm-10">
+                        <input type="address" class="form-control" id="address" name="address" placeholder="Address"/>
+                    </div>
+                  </div>
+                  <div class="form-group">                  
+                    <div class="col-sm-offset-5 col-sm-7">
+                        <input type="radio" name="addr_city_condition"  value="and" checked="checked" /> AND
+                        <input type="radio" name="addr_city_condition" value="or" /> OR
+                    </div>
+                  </div>  
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="city" >City</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="city" name="city" placeholder="City"/>
+                    </div>
+                  </div>   
+                  <div class="form-group">
+                    <div class="col-sm-offset-5 col-sm-7">
+                      <button type="submit" class="btn btn-default">Search</button>
+                    </div>
+                  </div>
+              </form>
+         </div>
+       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>           
+
+<!-- /.container-fluid -->
+  <footer class="footer text-center"> 2018 &copy; Pharmacy</footer>
+</div>
+<!-- /#page-wrapper --> 
+</div>
+<!-- /#wrapper --> 
+
+
+<script src="http://localhost:8004/Pharmacy/assets/validation/dist/parsley.js"></script>
+<script src="http://localhost:8004/Pharmacy/assets/validation/dist/i18n/en.js"></script>
+
+
+<script src="http://localhost:8004/Pharmacy/assets/admin/js/custom.js"></script>    
+
+
+<script>
+    $(".sidebar-head a").click(function () {
+        $('.sidebar').toggleClass('show');
+        $('.sidebar-head').toggleClass('show');
+        $('body').toggleClass('show');
+    });
+
+    $("#side-menu li a").click(function () {
+        if ($(this).next('ul')) {
+            $(this).next().slideToggle('fast');
+        }
+    });
+
+</script>
+
+
+<script type="text/javascript">
+ $('#allmedication').DataTable();
+  $('#managedmedication').DataTable();
+   $('#nonmanagedmedication').DataTable();
+ 
+    function imagePreview(input)
+    {
+        if (input.files && input.files[0])
+        {
+            if (input.files[0].type == "image/gif" || input.files[0].type == "image/jpeg" || input.files[0].type == "image/jpg" || input.files[0].type == "image/png") {
+
+                var filerdr = new FileReader();
+                filerdr.onload = function (e) {
+                    $('#imgDisplayarea').attr('src', e.target.result);
+                    $('#imgDisplayarea').attr('height', '130px;');
+                    $('#imgDisplayarea').attr('width', '170px;');
+                    $("#imgDisplayarea").removeClass("imgDisplayarea-border");
+                };
+
+                filerdr.readAsDataURL(input.files[0]);
+            }
+        }
+    }
+
+    var a = "";
+
+    if (a != '') {
+
+        $('#modal-container-569626').modal('show');
+        setTimeout(function () {
+            $('#modal-container-569626').modal('hide');
+        }, 1000);
+
+
+    }
+
+
+    var otable = $('#example').DataTable();
+    $(document).on('click', '.status_checks', function ()
+    {
+        var status = ($(this).hasClass("label-success")) ? '0' : '1';
+
+        var id = $(this).attr('id');
+        var table = $(this).attr('table');
+        var current_element = $(this);
+
+        $.ajax({
+            type: "POST",
+            url: "update_status",
+            data: {"id": id, "status": status, "table": table},
+            success: function (data) {                //alert(status)
+
+                if (status == '1') {
+
+
+                    current_element.text('Aktiv');
+                    current_element.removeClass("label-danger").addClass("label-success");
+
+                    $('#modal-container-569626').modal('show');
+
+                    setTimeout(function () {
+                        $('#modal-container-569626').modal('hide');
+                    }, 1000);
+
+                } else {
+                    current_element.text('Gesperrt');
+                    current_element.removeClass("label-success").addClass("label-danger");
+
+                    $('#modal-container-569626').modal('show');
+                    setTimeout(function () {
+                        $('#modal-container-569626').modal('hide');
+                    }, 1000);
+
+                }
+                $('#example').dataTable().fnDestroy();
+                var otable = $('#example').DataTable();
+                }});
+        });
+
+
+
+
+    $(document).on('click', '.order_status_checks', function ()
+    {
+        var status = ($(this).hasClass("label-success")) ? '0' : '1';
+
+        var id = $(this).attr('id');
+        var table = $(this).attr('table');
+        var current_element = $(this);
+
+        $.ajax({
+            type: "POST",
+            url: "update_order_status",
+            data: {"id": id, "status": status, "table": table},
+            success: function (data) {                //alert(status)
+
+                if (status == '1') {
+
+
+                    current_element.text('Aktiv');
+                    current_element.removeClass("label-danger").addClass("label-success");
+                    $('#modal-container-569626').modal('show');
+                    setTimeout(function () {
+                        $('#modal-container-569626').modal('hide');
+                    }, 1000);
+
+                } else {
+
+
+                    current_element.text('Gesperrt');
+                    current_element.removeClass("label-success").addClass("label-danger");
+                    $('#modal-container-569626').modal('show');
+                    setTimeout(function () {
+                        $('#modal-container-569626').modal('hide');
+                    }, 1000);
+
+                }
+
+
+                $('#example').dataTable().fnDestroy();
+
+                var otable = $('#example').DataTable({
+                    "language": {
+                        "decimal": "",
+                        "emptyTable": "No data available in table",
+                        "info": "Einträge _START_ bis _END_ von _TOTAL_ ",
+                        "infoEmpty": "0 bis 0 von 0 Eingaben",
+                        "infoFiltered": "(von insgesamt _MAX_ Einträgen)",
+                        "infoPostFix": "",
+                        "thousands": ",",
+                        "lengthMenu": "Anzeige: _MENU_ pro Seite",
+                        "loadingRecords": "Loading...",
+                        "processing": "Processing...",
+                        "search": "Suche:",
+                        "zeroRecords": "Keine Suchergebnisse gefunden",
+                        "paginate": {
+                            "first": "First",
+                            "last": "Last",
+                            "next": "Nächste",
+                            "previous": "Vorherige"
+                        },
+                        "aria": {
+                            "sortAscending": ": activate to sort column ascending",
+                            "sortDescending": ": activate to sort column descending"
+                        }
+                    },
+                    'aoColumnDefs': [{
+                            'bSortable': false,
+                            'aTargets': ['no-sorting']
+                        }]
+                });
+
+
+
+            }});
+
+
+    });
+
+
+
+    var url = "http://localhost:8004/Pharmacy/";
+
+    $(document).on('change', '.order_status_id', function ()
+    {
+
+        var order_id = $(this).attr('order-id');
+        var order_status_id = this.value;
+
+        $.ajax({url: url + 'admin/DashboardController/change_order_status',
+            type: 'POST',
+            data: {order_id: order_id, order_status_id: order_status_id},
+            success: function (data) {
+
+                $('#modal-container-569626').modal('show');
+                setTimeout(function () {
+                    $('#modal-container-569626').modal('hide');
+                }, 1000);
+
+            }
+
+        });
+
+
+    });
+
+
+    $(document).on('change', '.change_user_type', function ()
+    {
+
+        var user_id = $(this).attr('user-id');
+        var member_type = this.value;
+
+        $.ajax({url: url + 'admin/DashboardController/change_member_type',
+            type: 'POST',
+            data: {user_id: user_id, member_type: member_type},
+            success: function (data) {
+
+                $('#modal-container-569626').modal('show');
+                setTimeout(function () {
+                    $('#modal-container-569626').modal('hide');
+                }, 1000);
+
+            }
+
+        });
+
+
+    });
+
+
+    $("#example").wrap("<div class='table-responsive'></div>");
+
+
+
+    /*  $('<div class="list-status"> <label> Status :</label><select class="status" name="status" required=""> <option value="">--- All ---</option> <option value="Active">Active</option> <option value="Not Active">Not Active</option> </select> </div>').insertAfter( ".dataTables_length" ); */
+
+//var url      = window.location.href;     // Returns full URL
+//alert(url);
+</script>
+
+</body>
+</html>
